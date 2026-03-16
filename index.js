@@ -40,40 +40,7 @@ else{
 }
 }
 
-const loadCardDetails =async()=>{
-    const url =`https://phi-lab-server.vercel.app/api/v1/lab/issues`;
-   const res=await fetch(url);
-   const details=await res.json();
- displayCardDetails(details.data)  
-};
 
-const displayCardDetails =(card)=>{
-const detailsBox=document.getElementById("details-container");
-detailsBox.innerHTML=""
-
-const labels = card.labels.map(label => 
-`<span class="bg-yellow-100 text-yellow-500 px-2 py-1 rounded-lg text-xs">${label}</span>`
-).join(" ");
-
-const cardDetail =document.createElement("div");
-        cardDetail.innerHTML=`
-         <h1 class="font-bold">${card.title}</h1>
-        <div class="ul-list">
-            <ul> <span class="bg-green-100 text-green-300" >Open</span>
-                <li>Open by ${card.author} </li>
-                <li>1/15/2024</li>
-            </ul>
-
-            <div class="flex gap-2 pt-2 flex-wrap">
-                ${labels}
-            </div>
-
-            <div class="text-gray-500">${card.description}
-        </div>`
-
-         detailsBox.appendChild(cardDetail);
-         
-}
 
 
 
@@ -94,6 +61,7 @@ const displayCard =(cards)=>{
     cardContainer.innerHTML="";
 
 
+    
 
 
      totalIssue(cards.length);
@@ -120,7 +88,7 @@ const labels = card.labels.map(label =>
 
         const cardDiv =document.createElement("div");
         cardDiv.innerHTML=`
-        <div class="bg-white px-2 shadow rounded-lg flex flex-col h-full space-y-1 onclick="my_modal_5.showModal()" ${statusClass}">
+        <div  class="bg-white px-2 shadow rounded-lg flex flex-col h-full space-y-1  ${statusClass}">
                 <span class="flex justify-between pt-5  items-center ">
                 <i class="fa-regular fa-circle text-green-600 bg-green-200 rounded-full items-center justify-center "></i>
                 <div class="px-2 py-1 rounded-lg ${priorityClass}">  ${card.priority}</div>
@@ -140,7 +108,53 @@ const labels = card.labels.map(label =>
             </div>
            
         `;
+
+
         cardDiv.addEventListener("click", () => {
+
+displayCardDetails(card);
+
+const modal = document.getElementById("my_modal_5");
+modal.showModal();
+
+});
+
+cardContainer.appendChild(cardDiv);
+}) ;
+};
+      
+
+           
+const displayCardDetails =(card)=>{
+const detailsBox=document.getElementById("details-container");
+detailsBox.innerHTML=""
+
+const labels = card.labels.map(label => 
+`<span class="bg-yellow-100 text-yellow-500 px-2 py-1 rounded-lg text-xs">${label}</span>`
+).join(" ");
+
+const cardDetail =document.createElement("div");
+        cardDetail.innerHTML=`
+         <h1 class="font-bold">${card.title}</h1>
+        <div class="ul-list">
+            <ul> <span class="bg-green-100 text-green-300" >Open</span>
+                <li>Open by ${card.author} </li>
+                <li>${new Date(card.createdAt).toLocaleDateString()}</li>
+            </ul>
+
+            <div class="flex gap-2 pt-2 flex-wrap">
+                ${labels}
+            </div>
+
+            <div class="text-gray-500">${card.description}
+        </div>`
+
+         detailsBox.appendChild(cardDetail);
+        //  displayCardDetails();
+         
+};
+
+
             
     // modal content set করা
     // document.getElementById("modal-title").innerText = card.title;
@@ -148,15 +162,16 @@ const labels = card.labels.map(label =>
     // document.getElementById("modal-description").innerText = card.description;
     
     // modal show
-    const modal = document.getElementById("my_modal_5");
-    modal.showModal();
-});
-        cardContainer.appendChild(cardDiv);
-    })
-}
+   
+
+        // cardContainer.appendChild(cardDiv);
+    
+
+
+
 
 loadCards();
-displayCardDetails(card);
+
 
 //   "id": 1,
 // "title": "Fix navigation menu on mobile devices",
