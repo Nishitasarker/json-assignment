@@ -176,18 +176,6 @@ const cardDetail =document.createElement("div");
 };
 
 
-            
-    // modal content set করা
-    // document.getElementById("modal-title").innerText = card.title;
-
-    // document.getElementById("modal-description").innerText = card.description;
-    
-    // modal show
-   
-
-        // cardContainer.appendChild(cardDiv);
-    
-
 
 
 
