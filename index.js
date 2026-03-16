@@ -41,10 +41,6 @@ else{
 }
 
 
-
-
-
-
 const loadCards = () =>{
      manageSpinner(true);
     fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
@@ -55,14 +51,10 @@ const loadCards = () =>{
     });
 }
 
-
+// card display here
 const displayCard =(cards)=>{
     const cardContainer= document.getElementById("card-container");
     cardContainer.innerHTML="";
-
-
-    
-
 
      totalIssue(cards.length);
     cards.forEach((card)=>{
@@ -75,6 +67,7 @@ if(card.status == "open"){
 else if(card.status == "closed"){
     statusClass = "border-t-4 border-purple-500";
 }
+
 
         let priorityClass = "";
 if(card.priority=="high") priorityClass = "bg-red-100 text-red-500";
@@ -111,8 +104,7 @@ const labels = card.labels.map(label =>
 
 
         cardDiv.addEventListener("click", () => {
-
-displayCardDetails(card);
+         displayCardDetails(card);
 
 const modal = document.getElementById("my_modal_5");
 modal.showModal();
@@ -122,8 +114,6 @@ modal.showModal();
 cardContainer.appendChild(cardDiv);
 }) ;
 };
-      
-
            
 const displayCardDetails =(card)=>{
 const detailsBox=document.getElementById("details-container");
@@ -174,10 +164,6 @@ const cardDetail =document.createElement("div");
         //  displayCardDetails();
          
 };
-
-
-
-
 
 loadCards();
 
