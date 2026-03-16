@@ -129,24 +129,45 @@ const displayCardDetails =(card)=>{
 const detailsBox=document.getElementById("details-container");
 detailsBox.innerHTML=""
 
+let statusClass = "";
+if(card.status=="open") statusClass = "bg-green-100 text-green-500";
+else if(card.status=="closed") statusClass = "bg-purple-100 text-purple-500";
+
 const labels = card.labels.map(label => 
 `<span class="bg-yellow-100 text-yellow-500 px-2 py-1 rounded-lg text-xs">${label}</span>`
 ).join(" ");
 
+let priorityClass = "";
+if(card.priority=="high") priorityClass = "bg-red-100 text-red-500 ";
+else if(card.priority=="medium") priorityClass = "bg-orange-100 text-orange-500";
+else if(card.priority=="low") priorityClass = "bg-gray-100 text-gray-500";
+
+
 const cardDetail =document.createElement("div");
         cardDetail.innerHTML=`
          <h1 class="font-bold">${card.title}</h1>
-        <div class="ul-list">
-            <ul> <span class="bg-green-100 text-green-300" >Open</span>
-                <li>Open by ${card.author} </li>
-                <li>${new Date(card.createdAt).toLocaleDateString()}</li>
+        <div class="ul-list  my-3 ">
+            <ul class="list-inside flex flex-wrap gap-x-6 gap-y-2  items-center"> <span class="${statusClass} rounded-2xl px-2 py-1" >${card.status}</span>
+                <li class="text-gray-500">Open by ${card.author} </li>
+                <li class="text-gray-500">${new Date(card.createdAt).toLocaleDateString()}</li>
             </ul>
 
-            <div class="flex gap-2 pt-2 flex-wrap">
+            <div class="flex gap-2 pt-2 flex-wrap my-3">
                 ${labels}
             </div>
 
-            <div class="text-gray-500">${card.description}
+            <div class="text-gray-500">${card.description}</div>
+            <section class="mt-3 flex justify-between bg-gray-100 px-3 py-2 rounded-xl space-y-2">
+               <div>
+               <p class="text-gray-500">assignee</p>
+               ${card.assignee ? card.assignee:"No assignee" }
+               </div>
+              
+               <div class="flex flex-col items-center >
+               <p class="text-gray-500 pb-10">priority</p>
+               <div class="px-2 py-1 rounded-lg ${priorityClass}">  ${card.priority}</div>
+               </div>
+            </section>
         </div>`
 
          detailsBox.appendChild(cardDetail);
