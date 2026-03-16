@@ -3,199 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment</title>
+    <title>Cover Page</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <style>
-    .btn-section button{
-        box-sizing: border-box;
-        background-color: white;
-        color: grey;
-        border: 1px solid gray;
-        padding: 2px 9px 2px 9px;
-        border-radius: 5px;
-    }
-    .btn-section button.active{
-        background: blue;
-        color: white;
-    }
-
-    ul{
-        list-style-type: none;
-    }
-    .ul-list ul li{
-        list-style:disc;
-        position: relative;
-        padding-left: 1px;
-        margin: 8px 0;
-    }
-
-    li{
-        position: relative;
-        padding-left: 25px;
-        margin: 8px 0;
-    }
-
-    .green::before{
-        content: "";
-        width: 12px;
-        height: 12px;
-        background-color: green;
-        border-radius:50% ;
-        position: absolute;
-        left: 0;
-        top: 6px;
-    }
-
-    .purple::before{
-        content: "";
-        width: 12px;
-        height: 12px;
-        background-color: purple;
-        border-radius:50% ;
-        position: absolute;
-        left: 0;
-        top: 6px;
-    }
-
-
-    .shadow{
-        box-shadow: 0px 1px 1px ;
-
+    .myicon{
+        font-size: 130px;
+        margin: auto;
+        padding-top: 32px;
     }
 </style>
 </head>
 <body>
-    <!-- navbar -->
-    <header class="flex flex-col md:flex-row justify-between px-10 pt-5 pb-2 mx-8 md:mx-0">
-        <div class="flex gap-0 items-center"><i  class="fa-brands fa-square-github myicon text-5xl"></i>
-            <p class="font-bold text-lg">GitHub Issues Tracker</p>
-</div>
-
-<div class="flex flex-col md:flex-row gap-2">
-    <span><label class="input">
-  <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <g
-      stroke-linejoin="round"
-      stroke-linecap="round"
-      stroke-width="2.5"
-      fill="none"
-      stroke="currentColor"
-    >
-      <circle cx="11" cy="11" r="8"></circle>
-      <path d="m21 21-4.3-4.3"></path>
-    </g>
-  </svg>
-  <input id="input-search" type="search" required placeholder="Search" />
-</label></span>
-
-<button id="btn-search" class="btn btn-active btn-primary ">+ New issue</button>
-</div>
-    </header>
-
-    <!-- all card here -->
-
-    <main class="bg-sky-100 w-full min-h-screen py-5 space-y-5">
-         
-        <!-- button section -->
-
-        <section class="btn-section">
-            <div class=" bg-white  shadow-lg pl-5 pr-5 md:pr-0 flex flex-col md:flex-row mx-15 md:mx-40 gap-3 py-4 rounded-lg ">
-         <button class="active" onclick="filterCards('all'); changeColor(this)" >All</button>
-
-         <button onclick="filterCards('open'); changeColor(this)" >Open</button>
-
-         <button onclick="filterCards('closed'); changeColor(this)" >Closed</button>
-
-        </div>
-
-        </section>
-
-        <!-- Total issues  -->
+    <section class="mx-[30px] px-5 lg:mx-[400px] px-8">
  
-        <section class="flex flex-col md:flex-row justify-between px-5 items-center bg-white mx-15 md:mx-40 shadow-lg rounded-lg py-1">
-            <div class="flex  gap-5 md:gap-2 ">
-            <span class=" bg-blue-200 rounded-lg px-1  text-3xl flex justify-center items-center"><i class="fa-solid fa-border-all text-blue-800"></i></span>
-            <div class="font-bold"><span id="issue">50</span>  Issues
-            <p class="text-gray-500 font-semibold">Track and manage your project issues</p>
-        </div>
-        </div>
-        <div >
-            <ul class="flex gap-5">
-                <li class="green">Open</li>
-                <li class="purple">Closed</li>
-            </ul>
+        <div class="flex flex-col justify-center text-center space-y-1">
+            <i  class="fa-brands fa-square-github myicon"></i>
+            <h1 class="font-bold text-3xl mt-2">GitHub Issues Tracker</h1>
+            <p class="text-gray-500">Sign in to manage your issues</p>
         </div>
 
-        </section>
+        <div class="space-y-1">
+           <p class="font-semibold mt-2">Username</p> 
+           <input type="text" id="username" placeholder="Enter Username" class="w-full rounded-xl p-1  ">
+           <p class="text-purple-500">Default:admin</p>
+        </div>
 
-        <!-- spinner -->
-         <section id="spinner" class="flex justify-center items-center py-10 hidden">
-            <span class="loading loading-bars loading-xl"></span>
-         </section>
+        <div class="space-y-1">
+            <p class="font-semibold mt-2">Password</p> 
+           <input type="password" id="password" placeholder="Enter Password" class="w-full rounded-xl p-1">
+           <p class="text-purple-500">Default:admin123</p>
+        </div>
 
-        <!-- card container -->
-        <section id="card-container" class=" gap-1 grid grid-cols-1 md:grid-cols-4 mx-15 md:mx-40 space-y-1 space-x-1 ">
-            <!-- <div class="bg-white px-2">
-                <span class="flex justify-between pt-5  items-center">
-                <i class="fa-regular fa-circle text-green-600 bg-green-200 rounded-full items-center justify-center "></i>
-                <p class="bg-red-100 text-red-500 px-2 py-1 rounded-lg">High</p>
-                </span>
-                <p class="font-semibold ">Fix navigation menu on mobile devices</p>
-                <p class="text-gray-500">The navigation menu doesn't collapse properly on mobile devices.Need to fix the responsive behavior.</p>
-            <div class="flex gap-2">
-                <div class="bg-red-100 p-1 flex gap-1 rounded-lg justify-center items-center"><i class="fa-solid fa-bug-slash text-red-500"></i>
-                <p class="text-red-500">BUG</p>
+        <button onclick="signin()" class="text-white bg-purple-800 hover:bg-purple-900 w-full rounded-xl p-1 mt-2">Sign In</button>
+
+        <div class=" text-gray-600 my-2 ">-----------------------------<span class="font-semibold text-black">OR</span>------------------------------</div>
+
+        <div class="flex flex-col justify-center text-center bg-sky-100 mb-6">
+            <p class="mt-1 mb-3 text-gray-500">Demo Credentials:</p>
+            <div>
+                <p class="font-bold">Username: <span class="text-gray-700">admin</span></p>
+                <p class="mb-2 font-bold">Password: <span class="text-gray-700 ">admin123</span></p>
+            
             </div>
-
-            <div class="bg-orange-100 p-1 flex gap-1 rounded-lg justify-center items-center"><i class="fa-regular fa-life-ring text-orange-500"></i>
-                <p class="text-orange-500">HELP WANTED</p>
-            </div>
-            </div>
-
-            <div class=" h-0.5 bg-gray-100 w-full my-2"></div>
-
-            <div class="text-gray-500">
-                <p>#1 by john_doe</p>
-                <p>1/15/2024</p>
-            </div>
-            </div> -->
-           
-        </section>
-    </main>
-
-<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
-<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-  <div class="modal-box">
-    <div id="details-container" class="space-y-3">
-    </div>
-        <div class="modal-action">
-      <form method="dialog">
-        <!-- if there is a button in form, it will close the modal -->
-        <button class=" btn btn-active btn-primary">Close</button>
-      </form>
-    </div>
-  </div>
-</dialog>
+        </div>
+    </section>
 
 
-<!-- //   "id": 1,
-// "title": "Fix navigation menu on mobile devices",
-// "description": "The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.",
-// "status": "open",
-// "labels": [
-// "bug",
-// "help wanted"
-// ],
-// "priority": "high",
-// "author": "john_doe",
-// "assignee": "jane_smith",
-// "createdAt": "2024-01-15T10:30:00Z",
-// "updatedAt": "2024-01-15T10:30:00Z"  -->
 
-
-    <script src="./index.js"></script>
+    <script>
+        function signin() {
+            let user=document.getElementById("username").value;
+            let pass=document.getElementById("password").value;
+        if(user=="admin" && pass=="admin123"){
+            window.location="index.html";
+        }
+        
+        }
+    </script>
 </body>
 </html>
