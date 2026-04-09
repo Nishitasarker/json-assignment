@@ -1,58 +1,50 @@
 # 🚀 JSON Data Integration Project
 
-A robust and responsive web application built to demonstrate advanced data fetching, state management, and dynamic UI rendering. This project focuses on transforming raw JSON data into a clean, interactive, and user-centric digital experience.
+A robust and responsive web application built to demonstrate advanced data fetching, state management, and dynamic UI rendering. This project features a secure entry point and transforms raw JSON data into a clean, interactive, and user-centric experience.
 
 ## 🔗 Project Links
 * **Live Deployment:** [View Live Site](https://nishitasarker.github.io/json-assignment/)
 * **Repository:** [GitHub Source Code](https://github.com/nishitasarker/json-assignment)
 * **Developer Profile:** [LinkedIn](https://linkedin.com/in/nishitasarker)
 
+## 🔐 Access Credentials
+To explore the main dashboard and features, please use the following login credentials:
+* **Username:** `admin`
+* **Password:** `admin123`
+
 ## 🛠 Tech Stack & Tools
 This project leverages modern web technologies to ensure performance and scalability:
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![DaisyUI](https://img.shields.io/badge/daisyui-%235AD7E4.svg?style=for-the-badge&logo=daisyui&logoColor=white)
+
 * **Core Framework:** React.js (Component-based architecture)
-* **Styling:** Tailwind CSS (Utility-first CSS framework)
-* **UI Components:** DaisyUI (Clean and accessible UI components)
-* **Icons:** React Icons / FontAwesome
-* **Data Handling:** JSON (Local/Remote API simulation)
-* **Version Control:** Git & GitHub
+* **Styling:** Tailwind CSS & DaisyUI
+* **Data Handling:** JSON (Dynamic API simulation)
+* **Authentication:** Simple State-based Logic
 
 ## ⚙️ How It Works (The Logic)
-1.  **Asynchronous Data Fetching:** The application utilizes the `useEffect` hook to fetch data from a JSON source.
-2.  **State Management:** The fetched data is stored in the local component state using the `useState` hook, ensuring that the UI updates immediately when the data is loaded.
-3.  **Dynamic Rendering:** Instead of hardcoded elements, the app uses the `.map()` function to iterate through the JSON objects and generate UI cards dynamically.
-4.  **Responsive Layout:** Using Tailwind CSS Grid and Flexbox system, the interface automatically adapts from mobile screens to large desktop monitors.
-5.  **State Lifting:** (If applicable) Data is shared between sibling components by lifting state to the nearest common ancestor to keep the UI in sync.
+1.  **Authentication Layer:** Upon visiting the site, users are greeted with a Sign-in page. It validates credentials locally to grant access to the protected content.
+2.  **Asynchronous Data Fetching:** After a successful login, the application utilizes the `useEffect` hook to fetch data from a JSON source.
+3.  **State Management:** The fetched data is stored in the local component state using the `useState` hook, ensuring that the UI updates immediately when the data is loaded.
+4.  **Dynamic Rendering:** Instead of hardcoded elements, the app uses the `.map()` function to iterate through JSON objects and generate UI cards dynamically.
+5.  **Responsive Layout:** Using Tailwind CSS Grid and Flexbox, the interface adapts perfectly to all screen sizes.
 
 ## 🚀 Getting Started for Developers
-To run this project on your local machine, follow these instructions:
+To run this project on your local machine:
 
-### Prerequisites
-Make sure you have **Node.js** and **npm** installed on your system.
-
-### 1. Clone the Repository
+### 1. Clone & Navigate
 ```bash
 git clone [https://github.com/nishitasarker/json-assignment.git](https://github.com/nishitasarker/json-assignment.git)
 cd json-assignment
-
-
-
-2. Install Dependencies
-Install all the necessary packages listed in package.json:
-
+2. Install & Run
 Bash
 npm install
-3. Run the Development Server
-Launch the application locally to see changes in real-time:
-
-Bash
 npm run dev
-Open http://localhost:5173 (or the port specified in your terminal) in your browser.
-
-4. Build for Production
-To create an optimized build for deployment:
-
-Bash
-npm run build
+Open http://localhost:5173 in your browser.
 
 🤝 Contribution
 If you want to contribute to this project:
