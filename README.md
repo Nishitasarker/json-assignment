@@ -1,42 +1,78 @@
-   - 1️⃣ What is the difference between var, let, and const?
-    =>the difference between var, let and const are...
-    var=>
-    a variable can be declare in more time..also the variable can be change.
-    let=>
-     a variable can't be declare in more time..but the variable can be change.
-     const=>
-     a variable can't be declare in more time..and the variable can't be change.
+# 📊 JSON Data Display Project
 
+## 📌 Overview
 
+This project is a dynamic web application that works with JSON data. It fetches and displays structured data in a user-friendly and interactive way using JavaScript.
 
+The goal of this project is to practice working with JSON, DOM manipulation, and asynchronous JavaScript.
 
-    - 2️⃣ What is the spread operator (...)?
-    =>spread operator is a method which is used to copy all element of a array or object ..
-
-
-
-
-    - 3️⃣ What is the difference between map(), filter(), and forEach()?
-    =>
-    map()=>it is create a new array by changing every element.
-    filter()=>it collect some element depend on the condition.
-    forEach()=>works with each element.
-
-
-
-
-    - 4️⃣ What is an arrow function?
-    => it is e method which is used to write a function in a simple way..
-
-
-
-
-    - 5️⃣ What are template literals?
-    =>it is a easy method to write string ,here any variable and expression are easily used.the main feature are
-    1.used backtick (``).
-    2.used variable by (${}).
-    3.there are write a multi line string..
-
+🔗 **Live Website:**
+https://nishitasarker.github.io/json-assignment/
 
 ---
 
+## 📸 Screenshot
+
+<img width="1342" height="848" alt="09 04 2026_13 49 43_REC" src="https://github.com/user-attachments/assets/58e55cd6-43e6-43f9-9bba-cbe0182f036e" />
+
+---
+
+## 🚀 Technologies Used
+
+* HTML5
+* CSS3
+* JavaScript (ES6)
+* JSON
+
+---
+
+## ✨ Features
+
+* Fetch and display JSON data dynamically
+* DOM manipulation using JavaScript
+* Interactive UI
+* Clean and structured layout
+* Responsive design
+
+---
+
+## 📦 Dependencies
+
+This project does not use any external libraries or frameworks.
+All functionality is implemented using vanilla JavaScript.
+
+---
+
+## 🛠️ How to Run Locally
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/nishitasarker/json-assignment.git
+```
+
+2. Navigate to the project folder:
+
+```bash
+cd json-assignment
+```
+
+3. Open `index.html` in your browser
+
+---
+
+## 🔗 Relevant Links
+
+* 🌍 Live Site: https://nishitasarker.github.io/json-assignment/
+* 💻 GitHub Repo: https://github.com/nishitasarker/json-assignment
+* 🔗 LinkedIn: https://linkedin.com/in/nishitasarker
+
+---
+
+## 👩‍💻 Author
+
+**Nishita Sarker Jui**
+
+Web Developer | Technology Enthusiast
+
+---
