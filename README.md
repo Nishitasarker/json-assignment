@@ -5,7 +5,7 @@ A robust and responsive web application built to demonstrate advanced data fetch
 ## 🔗 Project Links
 * **Live Deployment:** [View Live Site](https://nishitasarker.github.io/json-assignment/)
 * **Repository:** [GitHub Source Code](https://github.com/nishitasarker/json-assignment)
-* **Developer Profile:** [LinkedIn](https://linkedin.com/in/nishitasarker)
+* **Developer Profile:** [LinkedIn](https://linkedin.com/in/nishitasarker2005)
 
 ## 🔐 Access Credentials
 To explore the main dashboard and features, please use the following login credentials:
